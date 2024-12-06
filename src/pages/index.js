@@ -30,6 +30,12 @@ export default function Home() {
     }));
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    console.log(formData);
+  };
+
   return (
     <>
       <form>
@@ -51,7 +57,7 @@ export default function Home() {
             onChange={handleChange}
           />
         </div>
-        <button>Envoyer</button>
+        <button onSubmit={handleSubmit}>Envoyer</button>
       </form>
     </>
   );
