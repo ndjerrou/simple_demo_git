@@ -16,16 +16,35 @@ const geistMono = localFont({
 });
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    mail: '',
+    password: '',
+  });
+
+  const handleChange = e => {
+    console.log('firing event change');
+  };
+
   return (
     <>
       <form>
         <div>
           <label>Mail : </label>
-          <input type='mail' />
+          <input
+            type='mail'
+            name='mail'
+            value={formData.mail}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label>Password : </label>
-          <input type='password' />
+          <input
+            type='password'
+            name='password'
+            value={formData.password}
+            onChange={handleChange}
+          />
         </div>
         <button>Envoyer</button>
       </form>
