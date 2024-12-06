@@ -22,7 +22,12 @@ export default function Home() {
   });
 
   const handleChange = e => {
-    console.log('firing event change');
+    const val = e.target.value;
+
+    setFormData(prevState => ({
+      ...prevState,
+      [e.target.name]: val,
+    }));
   };
 
   return (
