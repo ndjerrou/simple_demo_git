@@ -22,7 +22,18 @@ export default function Home() {
   });
 
   const handleChange = e => {
-    console.log('firing event change');
+    const val = e.target.value;
+
+    setFormData(prevState => ({
+      ...prevState,
+      [e.target.name]: val,
+    }));
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    console.log(formData);
   };
 
   return (
@@ -46,7 +57,7 @@ export default function Home() {
             onChange={handleChange}
           />
         </div>
-        <button>Envoyer</button>
+        <button onSubmit={handleSubmit}>Envoyer</button>
       </form>
     </>
   );
